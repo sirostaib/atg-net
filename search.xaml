@@ -1,0 +1,93 @@
+﻿<Page x:Class="ATG_WPF.Pages.search"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:ATG_WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}" 
+      d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}"
+      Title="search"
+      Background="Transparent"
+      ShowsNavigationUI="False">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Assets/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Margin="50 50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White" Height="50" CornerRadius="10" Margin="15,12,15,13" >
+            <Border.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
+                                          RenderingBias="Quality" 
+                                          ShadowDepth="4" Opacity="0.3"/>
+            </Border.Effect>
+            <Grid  VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Path Style="{StaticResource {x:Type Path}}"
+                      Data="{StaticResource search}"/>
+
+                <TextBox Grid.Column="1" x:Name="search_box" Foreground="Black"
+                         Grid.ColumnSpan="3" Margin="0 0 20 0"
+                         TextAlignment="Left" VerticalAlignment="Center" 
+                         materialDesign:HintAssist.Hint="Search:                                    *Search by using Vehicle Code or type 'ALL'"  BorderBrush="{x:Null}" KeyDown="OnPreviewKeyDown2"/>
+            </Grid>
+        </Border>
+
+        <Button x:Name="find_search" BorderThickness="0" Background="#00955E" HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" 
+                Content="Find" Grid.Column="1" Grid.Row="0" Height="35" Margin="40 0 40 0" Click="find_search_Click"
+                Style="{StaticResource {x:Type Button}}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+
+            </Button.Resources>
+
+        </Button>
+
+        <DataGrid x:Name="search_grid" Grid.Row="1" Background="Transparent" 
+                  ItemsSource="{Binding}" GridLinesVisibility="Horizontal"
+                  SelectionUnit="FullRow" SelectionMode="Extended" Margin="20,20,20,63"
+                  AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" 
+                  MouseDoubleClick="doubleClickRow" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vehicle Code" Binding="{Binding vehicle_code}"/>
+                <DataGridTextColumn Header="Vehicle Type" Binding="{Binding vehicle_type}"/>
+                <DataGridTextColumn Header="Batch Plant" Binding="{Binding batch_plant}"/>
+
+
+
+
+
+
+            </DataGrid.Columns>
+            <DataGrid.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
+                                          RenderingBias="Quality" 
+                                          ShadowDepth="4" Opacity="0.3"/>
+            </DataGrid.Effect>
+        </DataGrid>
+       
+    </Grid>
+</Page>

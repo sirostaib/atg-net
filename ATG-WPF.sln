@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATG-WPF", "ATG-WPF.csproj", "{7F86F79F-0B22-473F-8FAA-33B4A2287C63}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_lafargev2.1", "..\Setup_lafargev2.1\Setup_lafargev2.1.vdproj", "{35DDBAE3-32A3-4ABC-81FF-F10EAD020CCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F86F79F-0B22-473F-8FAA-33B4A2287C63}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{7F86F79F-0B22-473F-8FAA-33B4A2287C63}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{7F86F79F-0B22-473F-8FAA-33B4A2287C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F86F79F-0B22-473F-8FAA-33B4A2287C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DDBAE3-32A3-4ABC-81FF-F10EAD020CCB}.Debug|Any CPU.ActiveCfg = Release
+		{35DDBAE3-32A3-4ABC-81FF-F10EAD020CCB}.Debug|Any CPU.Build.0 = Release
+		{35DDBAE3-32A3-4ABC-81FF-F10EAD020CCB}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D58B8E88-6302-4064-B688-4B7C0F7A8C52}
+	EndGlobalSection
+EndGlobal

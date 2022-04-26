@@ -1,0 +1,96 @@
+﻿<Page x:Class="ATG_WPF.Pages.main_check"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:ATG_WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="{x:Static SystemParameters.PrimaryScreenHeight}" 
+      d:DesignWidth="{x:Static SystemParameters.PrimaryScreenWidth}"
+      Title="main_check"
+      ShowsNavigationUI="False">
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="290"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <TextBlock Grid.Column="1" Grid.RowSpan="2" Text="Uncheck " VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="30" FontWeight="SemiBold">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="4" Opacity="0.30" />
+            </TextBlock.Effect>
+        </TextBlock>
+
+
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <DataGrid  Width="1570" VerticalAlignment="Stretch"
+          x:Name="Uncheck_maintanance"
+          ItemsSource="{Binding}"
+          CanUserAddRows="False" 
+          SelectionUnit="FullRow"
+          SelectionMode="Extended" Margin="15"
+          SelectionChanged="un_Check_maintanance_selection"  
+          IsReadOnly="True" HorizontalAlignment="Stretch"
+          HorizontalScrollBarVisibility="Auto"
+          VerticalScrollBarVisibility="Auto"
+          ScrollViewer.CanContentScroll="True" 
+          ScrollViewer.HorizontalScrollBarVisibility="Visible"
+          GridLinesVisibility="Horizontal"
+          Foreground="Black">
+
+                <DataGrid.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="4" Opacity="0.30" />
+                </DataGrid.Effect>
+
+            </DataGrid>
+        </ScrollViewer>
+
+
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Proccessing" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="30"  FontWeight="SemiBold">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="4" Opacity="0.30" />
+            </TextBlock.Effect>
+        </TextBlock>
+        <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                Grid.Column="2" Content="View Timetable" x:Name="View_vehicle"
+                HorizontalAlignment="Center" Grid.Row="1"  
+                materialDesign:ButtonAssist.CornerRadius="20" BorderThickness="35" 
+                BorderBrush="#68A3DB" FontSize="15" Margin="0 20 0 0" Foreground="White"
+                VerticalAlignment="Top" Height="70" Width="150" 
+                Click="Button_Click_View_Vehicle">
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
+            </Button.Effect>
+        </Button>
+
+        <Button Style="{StaticResource MaterialDesignRaisedButton}" Content="Update Timetable" 
+                HorizontalAlignment="Center" Grid.Column="2" Margin="0 130 0 0" Grid.Row="1" 
+                VerticalAlignment="Top" Height="70" Width="150" 
+                materialDesign:ButtonAssist.CornerRadius="20" BorderThickness="35" 
+                BorderBrush="#68A3DB" FontSize="14" Foreground="White" Click="Button_Click_set_to_Pro">
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
+            </Button.Effect>
+        </Button>
+       
+
+    </Grid>
+
+</Page>
