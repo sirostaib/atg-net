@@ -12,28 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using System.Data;
-using System.Collections;
-
+using ATG_WPF.Pages;
 
 namespace ATG_WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for main_check.xaml
+    /// Interaction logic for view_report.xaml
     /// </summary>
-    public partial class main_check : Page
+    public partial class view_report : Page
     {
-
-   
-        DateTime dt = GlobalClass.GetNistTime();
-
-
-        public main_check()
+        public view_report()
         {
             InitializeComponent();
-            
         }
 
+        private void Weekly_report(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.weekly_report());
+        }
+
+        private void Monthly_report(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pages.Monthly_report());
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace ATG_WPF
 
         // this function is used to insert data into vehicle table in our database;
         // it inserts vehicle code, vehicle type and batch plant to the database
+        /*
         public static void Insert_into_vehicle(string v_c, string v_t, string b_p)
         {
 
@@ -25,9 +26,10 @@ namespace ATG_WPF
 
 
         }
-
+        */
         // this function is used to insert data into vehicle property table in our database;
         // it inserts vehicle code that is foreign key, working hour and the date for the inserted working hour
+        /*
         public static void Insert_into_vehicle_property(string v_c, double w_h, double wh_50h, double wh_300h, DateTime p_d)
         {
 
@@ -41,10 +43,11 @@ namespace ATG_WPF
 
 
         }
-
+        */
 
         // this function is used to insert data into vehicle check table in our database;
         // it inserts data into all columns for that particular table.
+        /*
         public static void Insert_into_vehicle_check(int ch_id, int ch_i, bool ch_r, string ch_note, string v_c, DateTime s_d)
         {
 
@@ -58,11 +61,12 @@ namespace ATG_WPF
 
 
         }
-
+        */
 
 
         // this function is used to insert data into weeekly reports table in our database;
-        // it inserts data into all columns for that particular table.
+        // it inserts data into all columns for that particular table.\
+        /*
         public static void Insert_into_weekly_reports(int w_i, string v_c, string w_note, DateTime s_d)
         {
 
@@ -76,11 +80,12 @@ namespace ATG_WPF
 
 
         }
-
+        */
 
 
         // this function is used to insert data into weekly checks sub table in our database;
         // it inserts data into all columns for that particular table.
+        /*
         public static void Insert_into_weekly_checks_sub(string v_c, int ch_r_i, int w_i, int f_ch_rep, DateTime sub_date)
         {
 
@@ -94,8 +99,8 @@ namespace ATG_WPF
 
 
         }
-
-
+        */
+        /*
         // this function is used to insert data into weekly checks sub table in our database;
         // it inserts data into all columns for that particular table.
         public static void Insert_into_monthly_reports(string v_c, bool ten_d, char fifty_w, char threeh_m, double w_h, string r_s, DateTime r_m_y)
@@ -112,48 +117,10 @@ namespace ATG_WPF
 
 
         }
+        */
 
+      
 
-        // this returns the number of vehicles in the database.
-        public static int num_of_vehicles()
-        {
-            GlobalClass.con.Open();
-            //SELECT COUNT(*) FROM cities;
-            string command_select = "SELECT COUNT(*) FROM vehicle;";
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-            GlobalClass.sql_dr.Read();
-            int num_of_v = GlobalClass.sql_dr.GetInt32(0);
-            GlobalClass.con.Close();
-            return num_of_v;
-        }
-
-
-        // this checks if the vehicle exists or not before inserting into vahicles table.
-        public static bool doesVehicleExist(string v_c)
-        {
-
-            GlobalClass.con.Open();
-            string command_select = "SELECT COUNT(*) FROM vehicle where vehicle_code = '" + v_c + "';";
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-            GlobalClass.sql_dr.Read();
-            int num_of_v = GlobalClass.sql_dr.GetInt32(0);
-
-
-
-            GlobalClass.con.Close();
-
-            if (num_of_v == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
 
 
         // this function selects and returns the data in user_account table
@@ -162,7 +129,7 @@ namespace ATG_WPF
             SelectAccount myAccount = new SelectAccount();
 
             GlobalClass.con.Open();
-            string command_select = "SELECT username, full_name, user_email, phone_num, user_role FROM user_account where username = '" + u_n + "';";
+            string command_select = "SELECT username, full_name, user_email FROM admin_account where username = '" + u_n + "';";
             MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
             GlobalClass.sql_dr = sql_cmd.ExecuteReader();
 
@@ -181,30 +148,10 @@ namespace ATG_WPF
         }
 
 
-        // this function selects and returns data from vehicle table
-        public static SelectVehicle getVehicleData(string v_c)
-        {
-            SelectVehicle myVehicle = new SelectVehicle();
-
-            GlobalClass.con.Open();
-            string command_select = "SELECT vehicle_code, vehicle_type, batch_plant FROM vehicle where vehicle_code = '" + v_c + "';";
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-
-            while (GlobalClass.sql_dr.Read())
-            {
-                myVehicle.vehicle_code = GlobalClass.sql_dr.GetString(0);
-                myVehicle.vehicle_type = GlobalClass.sql_dr.GetString(1);
-                myVehicle.batch_plant = GlobalClass.sql_dr.GetString(2);
-
-            }
-            GlobalClass.con.Close();
-
-            return myVehicle;
-        }
+    
 
 
-
+        /*
         // this function is used to insert data into maintenance vehicle table in our database;
         // it inserts data into all columns for that particular table.
         public static void insert_maintenance_vehicle( string v_c, int w_i, string ch_t, string v_s, DateTime v_d)
@@ -221,8 +168,8 @@ namespace ATG_WPF
 
 
         }
-
-
+        */
+        /*
         public static SelectMaintenanceVehicle getMaintenanceVehicleData(string v_c)
         {
 
@@ -275,7 +222,7 @@ namespace ATG_WPF
             return myVehicleProperty;
 
         }
-
+        
         public static int GetIndexNumber_v_ch()
         {
             GlobalClass.con.Open();
@@ -288,8 +235,9 @@ namespace ATG_WPF
             return index_num;
 
         }
+        */
 
-
+        /*
         public static int GetIndexNumber_w_r()
         {
             GlobalClass.con.Open();
@@ -302,149 +250,8 @@ namespace ATG_WPF
             return index_num;
 
         }
+        */
 
-
-        public static int GetLastNumber_w_r(string v_c)
-        {
-            GlobalClass.con.Open();
-            string command_select = " SELECT a.weekly_index FROM weekly_reports as a where a.vehicle_code = '" + v_c + "' " +
-                                   
-                                    " order by weekly_index desc limit 1; ";
-
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-            GlobalClass.sql_dr.Read();
-            int index_num = GlobalClass.sql_dr.GetInt32(0);
-            GlobalClass.con.Close();
-            return index_num;
-
-        }
-
-
-
-        // according to max date
-        // also according to weekly index and check rep index, 
-        // so it means according to 3 parameters
-        public static int getLastFalseCheck(int ch_r_i, int w_i, string v_c)
-        {
-
-            GlobalClass.con.Open();
-
-
-            string command_select = "select a.false_check_rep from weekly_checks_sub as a where "
-                + " a.check_rep_index = "+ ch_r_i + " and a.weekly_index = " + w_i +
-                " and a.vehicle_code = '" + v_c + "' " +
-                " order by a.check_rep_date desc " + 
-                " limit 1; ";
-
-
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-            GlobalClass.sql_dr.Read();
-            int lastFalse = GlobalClass.sql_dr.GetInt32(0);
-
-            GlobalClass.con.Close();
-
-            return lastFalse;
-        }
-
-
-        // this returns the last week for such vehicle
-        public static int getLastWeeklyIndex(string v_c, int new_w_i)
-        {
-
-            GlobalClass.con.Open();
-
-            /*
-             select a.weekly_index from weekly_reports as a where
-                             weekly_index < 2
-                             and a.vehicle_code = 'M62'
-                             order by weekly_index desc
-                             limit 1;
-             */
-
-            string command_select = "select a.weekly_index from weekly_reports as a where" +
-                " weekly_index < "+ new_w_i +" " +
-                " and a.vehicle_code = '"+ v_c +"' " +
-                " order by weekly_index desc  " +
-                " limit 1;  "  ;
-
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-            GlobalClass.sql_dr.Read();
-            int lastFalse = GlobalClass.sql_dr.GetInt32(0);
-
-            GlobalClass.con.Close();
-
-            return lastFalse;
-        }
-
-
-
-        public static string[] getAllVehicleCode()
-        {
-
-            int xV = num_of_vehicles();
-            int indexx = 0;
-            string[] allVehicles = new string[xV];
-
-
-            GlobalClass.con.Open();
-
-            MySqlCommand cmdd = new MySqlCommand(" select vehicle_code from vehicle; ", GlobalClass.con);
-            GlobalClass.sql_dr = cmdd.ExecuteReader();
-            while (GlobalClass.sql_dr.Read())
-            {
-                allVehicles[indexx] = GlobalClass.sql_dr.GetString(0);
-                indexx += 1;
-            }
-            GlobalClass.con.Close();
-
-
-            return allVehicles;
-
-        }
-
-
-        public static int[] getAllLatestFalseCheck(int w_i, string v_c)
-        {
-
-
-            int[] falseCheckList = new int[16];
-            int i = 0;
-
-            /*
-            select false_check_rep from weekly_checks_sub where 
-            weekly_index =  2
-            and vehicle_code = 'M44'
-            order by check_rep_date desc ;
-             */
-
-
-            GlobalClass.con.Open();
-
-
-            string command_select = "select false_check_rep from weekly_checks_sub where " +
-                " weekly_index = " + w_i + " and vehicle_code = '" + v_c + "' " +
-                " order by check_rep_date desc limit 16 ; ";
-            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
-            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
-
-            while (GlobalClass.sql_dr.Read())
-            {
-                falseCheckList[i] = GlobalClass.sql_dr.GetInt32(0);
-                i += 1;
-
-            }
-            GlobalClass.con.Close();
-
-
-
-
-
-            return falseCheckList;
-
-        }
 
 
     }
