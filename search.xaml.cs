@@ -17,7 +17,7 @@ namespace ATG_WPF.Pages
     {
 
 
-        List<SelectVehicle> myVehicle = new();
+        //List<SelectVehicle> myVehicle = new();
         public static string selectedVehicle;
 
 
@@ -42,7 +42,7 @@ namespace ATG_WPF.Pages
         }
 
         private void find_search_Click(object sender, RoutedEventArgs e)
-        {
+        {/*
 
             string keyWord = search_box.Text;
             keyWord = keyWord.ToUpper();
@@ -112,7 +112,7 @@ namespace ATG_WPF.Pages
             }
 
 
-
+            */
 
 
         }

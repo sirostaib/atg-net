@@ -25,8 +25,8 @@
           CanUserAddRows="False"
           SelectionUnit="Cell"
           SelectionMode="Extended"
-          Margin="20" SelectionChanged="weekly_report_Selection"
-          AutoGenerateColumns="False" CanUserDeleteRows="False" 
+          Margin="30" 
+          AutoGenerateColumns="True" CanUserDeleteRows="False" 
           HorizontalScrollBarVisibility="Auto"
           VerticalScrollBarVisibility="Auto"
           HorizontalAlignment="Center"
@@ -34,9 +34,14 @@
           ScrollViewer.CanContentScroll="True" 
           ScrollViewer.HorizontalScrollBarVisibility="Visible" Foreground="Black">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Vehicle Code" Binding="{Binding v_codee}"/>
-                    <DataGridTextColumn Header="Engine oil level" Binding="{Binding P1}"/>
-                    <DataGridTextColumn Header="Hydraulic oil level" Binding="{Binding P2}"/>
+                    <DataGridTextColumn Header="Student Example" Binding="{Binding v_codee}"/>
+                    <DataGridTextColumn Header="ISID Example" Binding="{Binding P1}"/>
+                    <DataGridTextColumn Header="Matric Example" Binding="{Binding P2}"/>
+                    <DataGridTextColumn Header="Section Example" Binding="{Binding P1}"/>
+                    <DataGridTextColumn Header="Course Example" Binding="{Binding P2}"/>
+                    <DataGridTextColumn Header="Department Example" Binding="{Binding P2}"/>
+                    <DataGridTextColumn Header="Year Example" Binding="{Binding P1}"/>
+                    <DataGridTextColumn Header="Semester Example" Binding="{Binding P2}"/>
                    
                    
                 </DataGrid.Columns>
@@ -47,7 +52,7 @@
             </DataGrid>
         </ScrollViewer>
         <Button x:Name="Weekly_report_download" Grid.Row="2" Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" 
-                            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#00955E" Foreground="White"
+                            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#68A3DB" Foreground="White"
                             Click="Download_btn" HorizontalAlignment="Right" Margin="0 0 40 0" Content="Download" >
             <Button.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
@@ -60,7 +65,7 @@
             </TextBlock.Effect>
         </TextBlock>
         <Button x:Name="goback" Grid.Row="2" Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" 
-            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#00955E" Foreground="White"
+            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#68A3DB" Foreground="White"
             Click="Goback_btn" HorizontalAlignment="Left" Margin="20,5,0,5" Content="Go Back" >
             <Button.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
@@ -79,9 +84,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="nextWeek_button" Height="100" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="45" Source="/NandP.png" MouseLeftButtonDown="nextWeek_button_click" />
-                <Image x:Name="prev_button" HorizontalAlignment="Center" Height="100" Grid.Column="1" VerticalAlignment="Center" Width="48" Source="/NandP2.png" MouseLeftButtonDown="prev_button_click"/>
-            </Grid>
+                 </Grid>
         </StackPanel>
         
     </Grid>

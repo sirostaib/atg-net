@@ -12,28 +12,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ATG_WPF.Pages;
+using ATG_WPF.Manage_Department.New_Department_Add;
 
-namespace ATG_WPF.Pages
+namespace ATG_WPF.Manage_Department
 {
     /// <summary>
-    /// Interaction logic for view_report.xaml
+    /// Interaction logic for viewAddCoursePage.xaml
     /// </summary>
-    public partial class view_report : Page
+    public partial class viewAddCoursePage : Page
     {
-        public view_report()
+        public viewAddCoursePage()
         {
             InitializeComponent();
         }
 
-        private void Weekly_report(object sender, RoutedEventArgs e)
+        private void Goback_click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pages.weekly_report());
+            this.NavigationService.Navigate(new Pages.dashboard());
         }
 
-        private void Monthly_report(object sender, RoutedEventArgs e)
+        private void addLecturerBtnClicked(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new Pages.Monthly_report());
+            this.NavigationService.Navigate(new addNewLecturerPage() );
         }
     }
 }

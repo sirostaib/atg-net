@@ -22,7 +22,7 @@ namespace ATG_WPF
         public HomePage()
         {
             InitializeComponent();
-            Main.Content = new Pages.vehicle();
+            Main.Content = new Pages.dashboard();
             Account_btn.Content = GlobalClass.Account_username;
             MaxHeight = SystemParameters.WorkArea.Height;
             MaxWidth = SystemParameters.WorkArea.Width;
@@ -48,7 +48,7 @@ namespace ATG_WPF
 
         private void vehicle_button1(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Pages.vehicle();
+            Main.Content = new Pages.dashboard();
         }
 
         private void ViewReport_button2(object sender, RoutedEventArgs e)

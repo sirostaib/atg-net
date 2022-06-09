@@ -18,7 +18,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="50"/>
-           
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -44,7 +44,7 @@
           CanUserAddRows="False" 
           SelectionUnit="FullRow"
           SelectionMode="Extended" Margin="15"
-          SelectionChanged="un_Check_maintanance_selection"  
+          
           IsReadOnly="True" HorizontalAlignment="Stretch"
           HorizontalScrollBarVisibility="Auto"
           VerticalScrollBarVisibility="Auto"
@@ -74,7 +74,7 @@
                 materialDesign:ButtonAssist.CornerRadius="20" BorderThickness="35" 
                 BorderBrush="#68A3DB" FontSize="15" Margin="0 20 0 0" Foreground="White"
                 VerticalAlignment="Top" Height="70" Width="150" 
-                Click="Button_Click_View_Vehicle">
+               >
             <Button.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
             </Button.Effect>
@@ -84,12 +84,21 @@
                 HorizontalAlignment="Center" Grid.Column="2" Margin="0 130 0 0" Grid.Row="1" 
                 VerticalAlignment="Top" Height="70" Width="150" 
                 materialDesign:ButtonAssist.CornerRadius="20" BorderThickness="35" 
-                BorderBrush="#68A3DB" FontSize="14" Foreground="White" Click="Button_Click_set_to_Pro">
+                BorderBrush="#68A3DB" FontSize="14" Foreground="White" >
             <Button.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
             </Button.Effect>
         </Button>
-       
+        <Button Style="{StaticResource MaterialDesignRaisedButton}" Content="Edit Students List" 
+                HorizontalAlignment="Center" Grid.Column="2" Margin="0,240,0,0" Grid.Row="1" 
+                VerticalAlignment="Top" Height="70" Width="150" 
+                materialDesign:ButtonAssist.CornerRadius="20" BorderThickness="35" 
+                BorderBrush="#68A3DB" FontSize="14" Foreground="White" >
+            <Button.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
+            </Button.Effect>
+        </Button>
+
 
     </Grid>
 

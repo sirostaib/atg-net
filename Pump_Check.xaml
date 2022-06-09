@@ -42,23 +42,14 @@
                     <RowDefinition Height="47*"/>
                     <RowDefinition Height="47*"/>
                     <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
-                    <RowDefinition Height="47*"/>
+                    
+                   
+                    
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="255*"/>
                     <ColumnDefinition Width="375*"/>
-                    <ColumnDefinition Width="182*"/>
-                    <ColumnDefinition Width="208*"/>
                     <ColumnDefinition Width="735*"/>
                 </Grid.ColumnDefinitions>
 
@@ -74,97 +65,29 @@
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="16*"/>
-                            <RowDefinition Height="11*"/>
-                            <RowDefinition Height="12*"/>
-                            <RowDefinition Height="11*"/>
+                           
+                           
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Column="0" Foreground="Green" FontSize="35" FontWeight="SemiBold" 
-                      HorizontalAlignment="Left" Text="Ready Mix" Width="165"/>
-
+                    
                         <TextBlock Grid.Column="1"  Foreground="Black" FontSize="35" FontWeight="SemiBold" 
                        VerticalAlignment="Top" HorizontalAlignment="Right"  Text="First Level Inspection" Height="47" Margin="0,0,10,0" Width="333"/>
 
-                        <TextBlock Grid.Row="1" Foreground="Black" FontSize="25" FontWeight="SemiBold" 
-                      HorizontalAlignment="Left" Text="Batch Plant:" Width="134" Margin="31,0,0,0">
-                            <TextBlock.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBlock.Effect>
-                        </TextBlock>
 
-                        <TextBlock Grid.Row="2" Foreground="Black" FontSize="25" FontWeight="SemiBold" 
-                      HorizontalAlignment="Left" Text="Code:" Width="65" Margin="100,0,0,0">
-                            <TextBlock.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBlock.Effect>
-                        </TextBlock>
+                     
 
-                        <TextBlock  Grid.Row="3" Foreground="Black" FontSize="20" FontWeight="SemiBold" 
-                      HorizontalAlignment="Left" Text="Working Hours: " Width="150" Margin="20,0,0,0">
-                            <TextBlock.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBlock.Effect>
-                        </TextBlock>
-
-                        <TextBlock Grid.Column="2"  Grid.Row="2" Foreground="Black" FontSize="25" FontWeight="SemiBold" 
-                      HorizontalAlignment="Center" Text="     Date:  " Width="126" Margin="225,2,312,1" RenderTransformOrigin="0.5,0.5"/>
-
-                        <TextBlock x:Name="DateTime_lable" Grid.Column="2" Grid.Row="2" Text="DateTime_Text" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="437,0,0,0"/>
+             
 
 
-                        <Image Height="60" Grid.Column="3" Source="/image/lafarge_icone.png"/>
+                       
 
-                        <TextBox Foreground="Black" Grid.Row="1" Grid.Column="1" x:Name="batch_plant" Background="White"
-                         TextAlignment="Left" VerticalAlignment="Center" 
-                         materialDesign:HintAssist.Hint="batch Plant"  BorderBrush="{x:Null}" Margin="0,0,332,4" Height="29">
-                            <TextBox.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBox.Effect>
-                        </TextBox>
-
-                        <TextBox Foreground="Black" Grid.Row="2" Grid.Column="1" x:Name="v_code" Background="White"
-                         TextAlignment="Left" VerticalAlignment="Center" 
-                         materialDesign:HintAssist.Hint="Code"  BorderBrush="{x:Null}" Margin="0,1,332,5" Height="30">
-                            <TextBox.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBox.Effect>
-                        </TextBox>
-
-                        <TextBox Foreground="Black" Grid.Row="3" Grid.Column="1" x:Name="working_hours" Background="White"
-                         TextAlignment="Left" VerticalAlignment="Center" 
-                         materialDesign:HintAssist.Hint="Counter"  BorderBrush="{x:Null}" Margin="0,1,332,5" Height="28">
-                            <TextBox.Effect>
-                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                            </TextBox.Effect>
-                        </TextBox>
-                        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Margin="597,0,0,0" Grid.Row="2" Width="20" SelectedDateChanged="DatePicker_selectedDate_changed" />
-                    </Grid>
+                          </Grid>
 
                 </StackPanel>
 
-                <TextBlock VirtualizingStackPanel.VirtualizationMode="Recycling" Grid.Row="1" Text="    Checks" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="25" Height="36" Margin="131,8,93,50" Width="151" Grid.RowSpan="2"/>
-
-                <TextBlock VirtualizingStackPanel.VirtualizationMode="Recycling" Grid.Column="2" Grid.Row="1" FontWeight="SemiBold" Text="     Result" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" FontSize="25" Height="34" Margin="30,2,49,7" Width="129" />
-
-                <TextBlock VirtualizingStackPanel.VirtualizationMode="Recycling" Grid.Column="3" Grid.Row="1" FontWeight="SemiBold" Text="       Note" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" FontSize="25" Height="34" Margin="284,2,293,7" Width="158" />
-
+             
                 <!-- P1-->
-                <TextBlock VirtualizingStackPanel.VirtualizationMode="Recycling" Grid.Column="0" Grid.Row="2" FontWeight="SemiBold" Text="Check engine oil level " VerticalAlignment="Center"
+                <TextBlock VirtualizingStackPanel.VirtualizationMode="Recycling" Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="Check engine oil level " VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="25" Height="32" Margin="0,8" Width="375" />
 
                 <TextBox  VirtualizingStackPanel.VirtualizationMode="Recycling" Foreground="Black" Grid.Row="2" Grid.Column="3" x:Name="Note_p1" Background="White"
@@ -180,22 +103,18 @@
 
 
                 <!--P2-->
-                <TextBlock Grid.Column="0" Grid.Row="3" FontWeight="SemiBold" Text="Check hydraulic oil level" VerticalAlignment="Center"
+                <TextBlock Grid.Column="1" Grid.Row="3" FontWeight="SemiBold" Text="Check hydraulic oil level" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="25" Height="32" Margin="0,8" Width="375" />
 
-                <TextBox Foreground="Black" Grid.Row="3" Grid.Column="3" x:Name="Note_p2" Background="White"
+                <TextBlock Foreground="Black" Grid.Row="3" Grid.Column="3" x:Name="Note_p2" Background="White"
                          TextAlignment="Left" VerticalAlignment="Center" 
-                         materialDesign:HintAssist.Hint="Note"  BorderBrush="{x:Null}" Margin="10,6,23,8" Height="34">
-                    <TextBox.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" 
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="4" Opacity="0.2"/>
-                    </TextBox.Effect>
-                </TextBox>
+                           Margin="10,6,23,8" Height="54">
+                   
+                </TextBlock>
 
 
                 <!--P3-->
-                <TextBlock Grid.Column="0" Grid.Row="4" FontWeight="SemiBold" Text="Check water level" VerticalAlignment="Center"
+                <TextBlock Grid.Column="1" Grid.Row="4" FontWeight="SemiBold" Text="Check water level" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="25" Height="32" Margin="0,8" Width="375" />
 
                 <TextBox Foreground="Black" Grid.Row="4" Grid.Column="3" x:Name="Note_p3" Background="White"
@@ -209,7 +128,7 @@
                 </TextBox>
 
                 <!--P4-->
-                <TextBlock Grid.Column="0" Grid.Row="5" FontWeight="SemiBold" Text="Check tires" VerticalAlignment="Center"
+                <TextBlock Grid.Column="1" Grid.Row="5" FontWeight="SemiBold" Text="Check tires" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="25" Height="32" Margin="0,8,0,7" Width="375" />
 
                 <TextBox Foreground="Black" Grid.Row="5" Grid.Column="3" x:Name="Note_p4" Background="White"
@@ -223,7 +142,7 @@
                 </TextBox>
 
                 <!--P5-->
-                <TextBlock Grid.Column="0" Grid.Row="6" FontWeight="SemiBold" Text="Check lights" VerticalAlignment="Center"
+                <TextBlock Grid.Column="1" Grid.Row="6" FontWeight="SemiBold" Text="Check lights" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="25" Height="32" Margin="0,8,0,7" Width="375" />
 
                 <TextBox Foreground="Black" Grid.Row="6" Grid.Column="3" x:Name="Note_p5" Background="White"
@@ -239,8 +158,8 @@
 
 
                 <Button x:Name="Submit" Grid.Column="4" Grid.Row="18" Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" 
-                            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#00955E"
-                            Click="Submit_Click" Content="Submit" >
+                            materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="20" BorderBrush="#68A3DB"
+                             Content="Submit" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>
                     </Button.Effect>
@@ -248,7 +167,7 @@
                 </Button>
 
                 <Button x:Name="Goback" Grid.Column="0" Grid.Row="18" Width="80" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" 
-                            materialDesign:ButtonAssist.CornerRadius="5" BorderThickness="20" BorderBrush="#00955E"
+                            materialDesign:ButtonAssist.CornerRadius="5" BorderThickness="20" BorderBrush="#68A3DB"
                             Click="Goback_click" Content="Goback" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>

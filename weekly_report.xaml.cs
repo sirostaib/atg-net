@@ -67,11 +67,13 @@ namespace ATG_WPF.Pages
 
         void download_buttonn()
         {
+            // we need these for later
+           // Microsoft.Office.Interop.Excel.Application excel;
+           // Microsoft.Office.Interop.Excel.Workbook worKbooK;
+           // Microsoft.Office.Interop.Excel.Worksheet worKsheeT;
+           // Microsoft.Office.Interop.Excel.Range celLrangE;
 
-            Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook worKbooK;
-            Microsoft.Office.Interop.Excel.Worksheet worKsheeT;
-            Microsoft.Office.Interop.Excel.Range celLrangE;
+
             /*
             try
             {

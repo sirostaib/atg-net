@@ -12,55 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ATG_WPF.Pages;
-using MySql.Data.MySqlClient;
 
-namespace ATG_WPF
+namespace ATG_WPF.Manage_Department.New_Department_Add
 {
     /// <summary>
-    /// Interaction logic for Pump_Check.xaml
+    /// Interaction logic for addNewLecturerPage.xaml
     /// </summary>
-    public partial class Pump_Check : Page
+    public partial class addNewLecturerPage : Page
     {
-   
-
-        public Pump_Check()
+        public addNewLecturerPage()
         {
             InitializeComponent();
-            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
-            //DateTime_lable.Text = GlobalClass.GetNistTime().ToString("yyyy-MM-dd HH:mm");
-
-           
-
-           // s_d = GlobalClass.GetNistTime();
-
-
-        }
-
-        private bool validateSubmit()
-        {
-
-            // code...
-
-
-            return false;
         }
 
 
-        /*
-      p1
-      */
-
-       
-
-
-
-
-    
         private void Goback_click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Pages.dashboard());
         }
+
     }
 }

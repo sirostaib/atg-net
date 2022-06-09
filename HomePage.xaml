@@ -176,10 +176,8 @@
                     <RadioButton x:Name="View_reportBtn" GroupName="MenuButton" Style="{StaticResource MenuButtonStyle}"
                                  Tag="{StaticResource semester}" Content="View Timetable" Click="ViewReport_button2" />
                     <RadioButton x:Name="Main_check_Btn" GroupName="MenuButton" Style="{StaticResource MenuButtonStyle}" 
-                                 Tag="{StaticResource manage}" Content="Maintenance Check" Click="MainCheck_button3" />
-                    <RadioButton x:Name="search_Btn" GroupName="MenuButton" Style="{StaticResource MenuButtonStyle}" 
-                                 Tag="{StaticResource search}" Content="Search" Click="Search_button4" />
-
+                                 Tag="{StaticResource manage}" Content="Manage Database" Click="MainCheck_button3" />
+     
                 </StackPanel>
 
                 <StackPanel VerticalAlignment="Center"  HorizontalAlignment="Center" Grid.Row="4" >

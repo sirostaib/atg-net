@@ -55,7 +55,7 @@ namespace ATG_WPF
 
 
 
-            MySqlCommand sql_cmd = new MySqlCommand("select username from user_account where username='" + user_name + "'", GlobalClass.con);
+            MySqlCommand sql_cmd = new MySqlCommand("select username from admin_account where username='" + user_name + "'", GlobalClass.con);
 
             try
             {
@@ -67,7 +67,7 @@ namespace ATG_WPF
                 {
 
                     GlobalClass.sql_dr.Close();
-                    sql_cmd = new MySqlCommand("select password from user_account where username = '" + user_name + "'", GlobalClass.con);
+                    sql_cmd = new MySqlCommand("select password from admin_account where username = '" + user_name + "'", GlobalClass.con);
                     GlobalClass.sql_dr = sql_cmd.ExecuteReader();
                     GlobalClass.sql_dr.Read();
 

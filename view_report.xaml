@@ -24,16 +24,16 @@
             
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Weekly Report" FontSize="50" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="View Latest Timetable" FontSize="80" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="4" Opacity="0.30" />
             </TextBlock.Effect>
         </TextBlock>
 
 
-        <Button x:Name="Download_Report_Weekly" FontSize="21" Grid.Row="1" Width="200" Height="100" Background="#68A3DB"  Style="{StaticResource MaterialDesignRaisedButton}" 
+        <Button x:Name="Download_Report_Weekly" FontSize="41" Grid.Row="1" Width="500" Height="200" Background="#68A3DB"  Style="{StaticResource MaterialDesignRaisedButton}" 
                             materialDesign:ButtonAssist.CornerRadius="50" BorderThickness="0" BorderBrush="#68A3DB"
-                            Click="Weekly_report" Content="View" >
+                            Click="Weekly_report" Content="Click here to View" >
             <Button.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.50"/>
             </Button.Effect>

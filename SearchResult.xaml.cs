@@ -26,7 +26,7 @@ namespace ATG_WPF
     {
 
         string vehicle_code;
-        List<MaintenanceReportData> tempData = new();
+       // List<MaintenanceReportData> tempData = new();
         int Vehicle_report_id;
         int ReportIDMan = 0;
 
@@ -47,6 +47,8 @@ namespace ATG_WPF
 
         void getVehicleData()
         {
+
+            /*
 
             float workingHour = 0;
 
@@ -70,7 +72,7 @@ namespace ATG_WPF
             GlobalClass.sql_dr.Close();
 
             
-            /*SELECT * FROM lafarge.maintenance_report;*/
+            
             bool isThereData = false;
             tempData = new();
 
@@ -103,7 +105,10 @@ namespace ATG_WPF
                 resultMaintenance_grid.Visibility = Visibility.Hidden;
             }
 
+
             GlobalClass.con.Close();
+
+            */
 
         }
 
@@ -131,8 +136,8 @@ namespace ATG_WPF
             {
 
 
-                SearchResultWindowSub hama = new SearchResultWindowSub(ReportIDMan);
-                hama.ShowDialog();
+               // SearchResultWindowSub hama = new SearchResultWindowSub(ReportIDMan);
+                //hama.ShowDialog();
                 
                 
 

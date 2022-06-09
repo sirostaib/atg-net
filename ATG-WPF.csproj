@@ -23,7 +23,7 @@
   <ItemGroup>
     <Compile Remove="WriteFile\**" />
     <EmbeddedResource Remove="WriteFile\**" />
-    <None Remove="WriteFile\**" />
+    <Nonemanage Remove="WriteFile\**" />
     <Page Remove="WriteFile\**" />
   </ItemGroup>
 

@@ -29,7 +29,7 @@ namespace ATG_WPF.Pages
 
             username_label.Text = myAccount.accUsername;
             full_label.Text = myAccount.accFullName;
-            phone_label.Text = myAccount.accPhoneNum;
+            //phone_label.Text = myAccount.accPhoneNum;
             email_abel.Text = myAccount.accEmail;
             role_label.Text = myAccount.accUserRole;
 
