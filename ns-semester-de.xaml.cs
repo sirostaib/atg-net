@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace ATG_WPF
 {
@@ -28,9 +29,41 @@ namespace ATG_WPF
 
             // generate random id for this new semester
             System.Random random = new System.Random();
-            semIDtext.Text += " ";
-            semIDtext.Text +=  random.Next(9999, 9999999).ToString() ;
+            
+            semIDtext.Text =  random.Next(9999, 9999999).ToString() ;
         }
+
+
+
+
+        private void insertSemester(object sender, RoutedEventArgs e)
+        {
+            if (semNumText.Text != "" && semSessionText.Text != "")
+            {
+
+                GlobalClass.con.Open();
+
+                string command_insert = @" INSERT INTO `atg`.`semester` (`semid`, `session`, `semnum`) VALUES ("+
+                    semIDtext.Text+", '"+semSessionText.Text+"', '"+semNumText.Text+"'); ";
+                MySqlCommand sql_cmd = new MySqlCommand(command_insert, GlobalClass.con);
+                GlobalClass.sql_dr = sql_cmd.ExecuteReader();
+                GlobalClass.con.Close();
+
+                MessageBox.Show("Successfully Added '" + semIDtext.Text + "', '" + semSessionText.Text + "', '" + semNumText.Text + "'");
+                semIDtext.Text = "";
+                semSessionText.Text = "";
+                semNumText.Text = "";
+
+
+            }
+            else
+            {
+                MessageBox.Show("Please don't leave any feild blank!");
+            }
+
+        }
+
+
 
         private void Goback_click(object sender, RoutedEventArgs e)
         {

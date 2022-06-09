@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace ATG_WPF.Manage_Department
 {
@@ -23,6 +24,8 @@ namespace ATG_WPF.Manage_Department
         public SelectDepPage()
         {
             InitializeComponent();
+            getListOfDepartments();
+
 
             /*
              <ComboBox x:Name="cmbCountryList"   
@@ -40,25 +43,6 @@ namespace ATG_WPF.Manage_Department
                                     Margin="0"/>
             */
 
-            List<string> lst = new List<string>();
-            lst.Add("Software Test");
-            lst.Add("Network Test");
-            lst.Add("Biomedical Test");
-            lst.Add("Pharmacy Test");
-            
-
-
-            try
-            {
-                // Binding  
-                
-                this.departmentList.ItemsSource = lst;
-                this.departmentList.Text = "Choose Department";
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex);
-            }
         }
 
         private void Goback_click(object sender, RoutedEventArgs e)
@@ -68,7 +52,48 @@ namespace ATG_WPF.Manage_Department
 
         private void nextClicked(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new viewAddCoursePage());
+            this.NavigationService.Navigate(new viewAddCoursePage(departmentList.SelectedValue.ToString()));
+        }
+
+
+
+        public void getListOfDepartments()
+        {
+
+
+            List<string> depList = new List<string>();
+            List<string> depIDList = new List<string>();
+
+
+            GlobalClass.con.Open();
+            string command_select = "SELECT * FROM atg.department; ";
+            MySqlCommand sql_cmd = new MySqlCommand(command_select, GlobalClass.con);
+            GlobalClass.sql_dr = sql_cmd.ExecuteReader();
+
+            while (GlobalClass.sql_dr.Read())
+            {
+                depIDList.Add(GlobalClass.sql_dr.GetString(0));
+                depList.Add(GlobalClass.sql_dr.GetString(1));
+                
+                
+                
+
+            }
+
+            GlobalClass.con.Close();
+            try
+            {
+                // Binding  
+
+                this.departmentList.ItemsSource = depList;
+                this.departmentList.Text = "Choose Department";
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+
+
         }
     }
 }

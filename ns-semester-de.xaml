@@ -46,14 +46,14 @@
                 <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="Session:" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="35" Height="56" Margin="0,8" Width="475" />
 
-                <TextBox Grid.Column="3" Grid.Row="2" 
+                <TextBox x:Name="semSessionText" Grid.Column="3" Grid.Row="2" 
                              Background="White" materialDesign:HintAssist.Hint="2017/2018" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
 
                 </TextBox>
 
-                <TextBox Grid.Column="3" Grid.Row="3" 
+                <TextBox x:Name="semNumText" Grid.Column="3" Grid.Row="3" 
                              Background="White" materialDesign:HintAssist.Hint="I or II" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
@@ -91,7 +91,7 @@
 
                 <Button x:Name="Submit" Grid.Column="4" Grid.Row="5" Width="500" Height="100" Style="{StaticResource MaterialDesignRaisedButton}" 
                             materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="50" BorderBrush="#68A3DB"
-                             Content="Save Semester" FontSize="30" >
+                             Content="Save Semester" FontSize="30" Click="insertSemester" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>
                     </Button.Effect>

@@ -49,14 +49,14 @@
 
 
 
-                <TextBox Grid.Column="3" Grid.Row="2" 
+                <TextBox x:Name="lecturerNameText" Grid.Column="3" Grid.Row="2" 
                              Background="White" materialDesign:HintAssist.Hint="e.g. Kanar Tariq" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
 
                 </TextBox>
 
-                <TextBox Grid.Column="3" Grid.Row="3" 
+                <TextBox x:Name="lecturerEmailText" Grid.Column="3" Grid.Row="3" 
                              Background="White" materialDesign:HintAssist.Hint="e.g. Kanar.Tariq@uniq.edu.iq" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
@@ -91,7 +91,7 @@
 
                 <Button x:Name="addLecturerBtn" Grid.Column="2" Grid.Row="4" Width="500" Height="100" Style="{StaticResource MaterialDesignRaisedButton}" 
                             materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="50" BorderBrush="#68A3DB"
-                             Content="Add Lecturer" FontSize="30" >
+                             Content="Add Lecturer" FontSize="30" Click="addLecturerSubmit" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>
                     </Button.Effect>

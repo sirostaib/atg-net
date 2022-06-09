@@ -47,7 +47,7 @@
                 <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="SemiBold" Text="Department Name:" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="35" Height="56" Margin="0,8" Width="475" />
 
-                <TextBox Grid.Column="3" Grid.Row="2" 
+                <TextBox x:Name="depNameText" Grid.Column="3" Grid.Row="2" 
                              Background="White" materialDesign:HintAssist.Hint="Biomedical Engineering" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
@@ -60,7 +60,7 @@
 
               
                 <!--P5-->
-                <TextBlock Grid.Column="1" Grid.Row="1" FontWeight="SemiBold" Text="Department ID:" VerticalAlignment="Center"
+                <TextBlock  Grid.Column="1" Grid.Row="1" FontWeight="SemiBold" Text="Department ID: (Auto)" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="35" Height="56" Margin="0,8" Width="475" />
 
                 <TextBlock x:Name="depIDtext" Grid.Column="2" Grid.Row="1" FontWeight="SemiBold" Text="Automatically Generated*" VerticalAlignment="Center"
@@ -72,7 +72,7 @@
 
                 <Button x:Name="depSubmit" Grid.Column="4" Grid.Row="3" Grid.RowSpan="2" Width="500" Height="110" Style="{StaticResource MaterialDesignRaisedButton}" 
                             materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="55" BorderBrush="#68A3DB" FontSize="40"
-                             Content="Add Department" >
+                             Content="Add Department" Click="addDepSubmit" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>
                     </Button.Effect>

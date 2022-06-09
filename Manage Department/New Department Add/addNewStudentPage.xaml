@@ -51,22 +51,22 @@
 
 
 
-                <TextBox Grid.Column="3" Grid.Row="1" 
-                             Background="White" materialDesign:HintAssist.Hint="Computational Intelligence" 
+                <TextBox x:Name="sNameText" Grid.Column="3" Grid.Row="1" 
+                             Background="White" materialDesign:HintAssist.Hint="e.g. Shazad Shwan" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
 
                 </TextBox>
 
-                <TextBox Grid.Column="3" Grid.Row="2" 
-                             Background="White" materialDesign:HintAssist.Hint="SCSJ4432" 
+                <TextBox x:Name="isidText" Grid.Column="3" Grid.Row="2" 
+                             Background="White" materialDesign:HintAssist.Hint="e.g. 201901M20043" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
 
                 </TextBox>
 
-                <TextBox Grid.Column="3" Grid.Row="3" 
-                             Background="White" materialDesign:HintAssist.Hint="3" 
+                <TextBox x:Name="matricText" Grid.Column="3" Grid.Row="3" 
+                             Background="White" materialDesign:HintAssist.Hint="e.g. QU182SCSJ082" 
                              Height="60" FontSize="32"
                              VirtualizingStackPanel.VirtualizationMode="Recycling">
 
@@ -98,9 +98,9 @@
                 <TextBlock Grid.Column="1" Grid.Row="3" FontWeight="SemiBold" Text="Matric:" VerticalAlignment="Center"
                        HorizontalAlignment="Left" FontSize="35" Height="56" Margin="80,8" Width="475" />
 
-                <Button x:Name="savecourse" Grid.Column="2" Grid.Row="4" Width="500" Height="100" Style="{StaticResource MaterialDesignRaisedButton}" 
+                <Button x:Name="saveStudent" Grid.Column="2" Grid.Row="4" Width="500" Height="100" Style="{StaticResource MaterialDesignRaisedButton}" 
                             materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="50" BorderBrush="#68A3DB"
-                             Content="Add Course" FontSize="30" >
+                             Content="Add Student" FontSize="30" Click="addStudentSubmit" >
                     <Button.Effect>
                         <DropShadowEffect Color="Gray" BlurRadius="20" Direction="-90" RenderingBias="Quality" ShadowDepth="3" Opacity="0.30"/>
                     </Button.Effect>
@@ -129,7 +129,7 @@
                 <DataGrid Margin="35" x:Name="studentGrid" Grid.Row="1" Grid.RowSpan="4" FontSize="20" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
 
-                <TextBlock Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" FontWeight="SemiBold" Text="Department" VerticalAlignment="Center"
+                <TextBlock x:Name="DepartmentNameLabel" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" FontWeight="SemiBold" Text="Department" VerticalAlignment="Center"
                        HorizontalAlignment="Center" FontSize="35" Height="56" Width="1037" />
 
 

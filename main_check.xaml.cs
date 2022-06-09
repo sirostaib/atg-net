@@ -26,7 +26,7 @@ namespace ATG_WPF.Pages
     {
 
    
-        DateTime dt = GlobalClass.GetNistTime();
+        
 
 
         public main_check()
